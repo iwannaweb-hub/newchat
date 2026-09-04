@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Realtime Translate Chat - Login</title>
+<link rel="stylesheet" href="/css/style.css" />
+<!-- PWA(홈 화면에 앱처럼 설치) 관련 태그들 -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#3b6ef6" />
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="번역채팅" />
+</head>
+<body>
+
+<div class="top-bar">
+  <h1 data-i18n="app_name">실시간 번역 채팅</h1>
+  <select class="lang-select" id="topLangSelect">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="ja">日本語</option>
+  </select>
+</div>
+
+<div class="auth-wrap">
+  <!-- 로그인 폼 -->
+  <div id="loginForm">
+    <h2 data-i18n="login_title">로그인</h2>
+    <div class="field">
+      <label data-i18n="username_label">아이디</label>
+      <input id="loginUsername" type="text" autocomplete="username" />
+    </div>
+    <div class="field">
+      <label data-i18n="password_label">비밀번호</label>
+      <input id="loginPassword" type="password" autocomplete="current-password" />
+    </div>
+    <button class="primary-btn" id="loginSubmit" data-i18n="login_button">로그인</button>
+    <p class="error-text" id="loginError"></p>
+    <button class="link-btn" id="showRegister" data-i18n="switch_to_register">계정이 없으신가요? 회원가입</button>
+  </div>
+
+  <!-- 회원가입 폼 -->
+  <div id="registerForm" style="display:none;">
+    <h2 data-i18n="register_title">회원가입</h2>
+    <div class="field">
+      <label data-i18n="username_label">아이디</label>
+      <input id="registerUsername" type="text" autocomplete="username" />
+    </div>
+    <div class="field">
+      <label data-i18n="password_label">비밀번호</label>
+      <input id="registerPassword" type="password" autocomplete="new-password" />
+    </div>
+    <div class="field">
+      <label data-i18n="ui_lang_label">사용할 언어</label>
+      <select id="registerLang" class="lang-select">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+    <button class="primary-btn" id="registerSubmit" data-i18n="register_button">회원가입</button>
+    <p class="error-text" id="registerError"></p>
+    <button class="link-btn" id="showLogin" data-i18n="switch_to_login">이미 계정이 있으신가요? 로그인</button>
+  </div>
+</div>
+
+<script src="/js/i18n.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/pwa.js"></script>
+</body>
+</html>
